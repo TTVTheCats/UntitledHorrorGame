@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://d8sio64hwj26"]
+
+[ext_resource type="Script" path="res://SelezioneImpostazioni/Settings_menu.gd" id="1_c3505"]
+[ext_resource type="Texture2D" uid="uid://cgh2ewx48w255" path="res://2Dtexture/eye2.png" id="2_071ye"]
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 22.0
+offset_right = 1930.0
+offset_bottom = 1102.0
+script = ExtResource("1_c3505")
+
+[node name="Background" type="Sprite2D" parent="."]
+rotation = -3.14159
+scale = Vector2(651.849, -113.793)
+texture = ExtResource("2_071ye")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -50.5
+offset_right = 39.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Video" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Video"
+
+[node name="Audio" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Audio"
+
+[node name="Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Gioco"
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Indietro"
+
+[connection signal="pressed" from="VBoxContainer/Video" to="." method="_on_video_pressed"]
+[connection signal="pressed" from="VBoxContainer/Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
